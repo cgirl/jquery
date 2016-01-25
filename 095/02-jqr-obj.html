@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery对象和dom对象</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+</head>
+<body>
+	<p id="p">11111111</p>
+	
+	<script>
+		//用jquery选择器得到的对象，就是jquery对象
+		var p = $('p');
+		/*
+			jquery对象不能使用DOM对象中的方法，只能使用jquery中的方法;
+			但是如果DOM对象中的方法，在jquery库中被改写过，那么可以使用DOM对象中的方法
+		*/
+		//alert(p.innerHTML); //undefined
+		alert(p.html());
+	</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery对象和dom对象</title>
+</head>
+<body>
+	<p id="p">11111111</p>
+	
+	<script>
+		//用dom方法获得到的对象，就是dom对象
+		var p = document.getElementById('p');
+		alert(p.innerHTML);
+		//DOM对象不能使用任何jquery对象中的方法，只能使用DOM对象中的方法
+		//alert(p.html());//Uncaught TypeError: p.html is not a function
+	</script>
+</body>
+</html>

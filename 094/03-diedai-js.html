@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>隐式迭代(一般不用for循环dom对象)</title>
+</head>
+<body>
+	<p>我是1标签</p>
+	<p>我是2标签</p>
+	<p>我是3标签</p>
+</body>
+<!-- 当我点击每个p标签时，我要弹出当然p标签里的内容 -->
+<script type="text/javascript">
+var p = document.getElementsByTagName('p');
+for (var i=0; i<p.length; i++){
+	p[i].onclick=function(){
+		alert(this.innerHTML);
+	}
+}
+</script>
+</html>

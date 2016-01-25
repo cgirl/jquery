@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>window.onload与$(document).ready的区别1</title>
+</head>
+<script src="../jquery-1.12.0.min.js"></script>
+<script>
+/* 
+等网页中所有资源加载完毕后（包括图片、音视频等），才执行该步骤
+window.onload = function(){
+	alert('1');
+} */
+
+$(document).ready(function (){
+	alert('1');
+})
+</script>
+<body>
+	<h1>jquery的10大优点</h1>
+	<p>
+		1.轻量级
+		2.强大的选择器
+		3.出色的DOM操作封装
+		4.完善的事件和事件对象兼容机制
+		5.完善的ajax
+		6.不污染全局变量（$可以随时交出控制权）
+		7.出色的浏览器兼容
+		8.方便的链式操作
+		9.隐式迭代（一般情况下不需要for循环遍历dom对象）
+		10.完善的文档
+	</p>
+</body>
+</html>

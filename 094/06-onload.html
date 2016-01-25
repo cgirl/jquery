@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>window.onload与$(document).ready的区别2</title>
+</head>
+<script src="../jquery-1.12.0.min.js"></script>
+<script>
+/* 
+window.onload只能写一个，如果写多个，后面的会覆盖前面的代码，
+而$(document).ready可以写多个 */
+window.onload = function(){
+	alert('1');
+}
+window.onload = function(){
+	alert('2');
+}
+window.onload = function(){
+	alert('3');
+}
+</script>
+<body>
+	
+</body>
+</html>

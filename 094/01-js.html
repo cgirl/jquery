@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery简介</title>
+</head>
+<body>
+	<a href="#">aaaaaaaa</a>
+	<!-- 
+		当页面加载完毕的时候，我要让标签里的文字变成红色，
+		当我点击这个a标签的时候，我需要让这个a标签有一个蓝色的边框
+	-->
+</body>
+<script>
+alert('1');
+	var a = document.getElementsByTagName('a')[0];
+	a.style.color = "red";
+	a.onclick = function (){
+		this.style.border = "1px solid blue";
+	}
+</script>
+</html>

@@ -8,13 +8,11 @@
 <body>
 	<input type="text" id="a" value="1111111" />
 	<script>
-		var input = $('#a');
-		alert(input.val());
-		alert(input[0].value);
-		//jquery对象是转换成DOM对象的
-		//1.可以使用索引，index
-		alert(input.get(0).value);
-		//2.可以使用get(index)的方法
+		var input = document.getElementById('a');
+		alert(input.value);
+		alert($(input).val());
+		//DOM对象转换成jquery对象的方法
+		//用$()把DOM对象包装起来就ok了
 	</script>
 </body>
 </html>

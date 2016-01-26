@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery与其他js库共存</title>
+<script src="http://libs.baidu.com/prototype/1.7.1.0/prototype.js"></script>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+</head>
+<body>
+	<input type="text" id="a" value="aaaaaa" />
+	<script>
+		jQuery.noConflict();
+		alert('这是jquery弹出的'+jQuery('#a').val());
+		alert('这是prototype弹出的'+$F('a'));
+		//alert('这是jquery弹出的'+jQuery('#a').val());
+		//加载库jquery库在后，则必须加jQuery.noConflict();这句
+		//1.如果不加，jquery在前，则jquery不报错，但是prototype报错
+		//2.如果不加，prototype在前，直接报错
+	</script>
+</body>
+</html>

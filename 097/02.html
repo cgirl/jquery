@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>内容选择过滤器</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<style type="text/css">
+p{
+	height:30px;
+	line-height:30px;
+}
+</style>
+</head>
+<body>
+	<p>构思相对/绝对(relative/absolute)定位系列却有好些时日</p>
+	<p><strong>relative/z-index</strong>本身关系暧昧非比寻常</p>
+	<p>CSS float浮动的深入研究、详解及拓展(一)</p>
+	<p></p>
+	<p><span></span></p>
+	<p>本文也将借助情感化思维分析“position:relative/absolute”属性的脾气特性，利弊好坏</p>
+	<script type="text/javascript">
+		//:contains()选取含有文本内容的元素
+		$('p:contains("absolute")').css('background', 'red');
+		//$('p:contains("CSS")').show().siblings().hide();
+		
+		//:has()选择指定元素的元素
+		$('p:has("strong")').css('font-family', '楷体');
+		
+		//:empty选择不包含子元素并且文本空元素
+		$('p:empty').css('background', '#DDDDDD');
+		
+		//:parent选取含有子元素或者文本的元素
+		$('p:parent').css('background', '#B12358');
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>基本过滤选择器</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<style>
+#go{
+	width:100px;
+	height:100px;
+	background:blue;
+	position:absolute;
+}
+</style>
+</head>
+<body>
+	<h1>我是h1标签</h1>
+	<h2>我是h2标签</h2>
+	<h3>我是h3标签</h3>
+	<h4>我是h4标签</h4>
+	<h5>我是h5标签</h5>
+	<h6>我是h6标签</h6>
+	<p><span>我是第</span><em>1111111</em>个标签</p>
+	<p>我是第2222222个标签</p>
+	<p class="a">我是第3333333个标签</p>
+	<p>我是第4444444个标签</p>
+	<p>我是第5555555个标签</p>
+	<div id="go"></div>
+	<script type="text/javascript">
+		//:first 选取第一个元素
+		$('p:first').css('background', 'red'); //第一个p元素
+		$('p :first').css('font-weight', 'bold'); //p元素下的第一个子元素
+		//:last 选取最后一个元素
+		$('p:last').css('background', '#cccccc'); //第一个p元素
+		//:not()选取除指定之外的元素
+		$('p:not(".a")').css('color', '#987456');
+		//:even偶数选择器
+		$('p:even').css('text-decoration', 'line-through');
+		//：odd奇数选择器
+		$('p:odd').css('text-decoration', 'underline');
+		//:eq()选取指定索引的元素
+		$('p:eq(3)').css('font-weight', 'bold');
+		//:gt()选择大于指定索引的元素
+		$('p:gt(2)').css('font-family', '楷体');
+		//:lt()选择小于指定索引的元素
+		$('p:lt(2)').css('font-family', '隶书');
+		//:header选取h1~h6标签
+		$(':header').css('font-family', '楷体');
+		//:animated选取正在执行动画的元素
+		$('#go').animate({'left':'1000'}, 10000);
+		$(':animated').css('background', 'red');
+		//:lang()语言代码选择器
+		//:root根元素选择器
+		//:target选择由URL格式化识别码表示的目标元素
+	</script>
+</body>
+</html>

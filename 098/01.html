@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>属性选择器</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+</head>
+<body>
+	<p title="js">11111111111111111</p>
+	<p myattr="my">22222222222222222222</p>
+	<div title="language" myattr="my">33333333333333</div>
+	<a href="#" sendID="4" title="shanchu">删除1</a>
+	<a href="#" sendID="3" title="shanchu">删除2</a>
+	<a href="#" sendID="2" title="shanchu">删除3</a>
+	<script>
+		//[attr]选择拥有此属性的选择器
+		$('[myattr]').css('color', 'red');
+		
+		//[attr=value]指定属性值的选择器
+		$('p[title=js]').css('color', 'green');
+		
+		//[attr1][attr2][attr3]符合属性选择器
+		$('a[title][sendID=3]').css('background', '#F65478');
+	</script>
+</body>
+</html>

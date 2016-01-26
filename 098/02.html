@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>子元素过滤选择器</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+</head>
+<body>
+	<div id="">
+		<p>我是第一个子元素p</p>
+		<p>我是第二个子元素p</p>
+		<p>我是第三个子元素p</p>
+		<p>我是第四个子元素p</p>
+		<p>我是第五个子元素p</p>
+	</div>
+	<div>
+		<p>我是独生子</p>
+	</div>
+	<script>
+		//:first-child选择父元素第一个子元素
+		$('div p:first-child').css('background', 'red');
+	
+		//:last-child选择父元素最后一个子元素
+		$('div p:last-child').css('background', 'green');
+	
+		//:only-child选择元素中只包含一个子元素的元素
+		$('div p:only-child').css('background', '#DDD');
+	
+		//:nth-child(表达式)选取父元素中的第X个元素，X由表达式决定
+		$('div p:nth-child(2n)').css('color', 'blue');
+		
+		//下面的不重要，知道即可，如果有需要，去查看手册
+		//:first-of-type选取所有相同元素的第一个兄弟元素
+		//:last-of-type选取所有相同元素的最后一个兄弟元素
+		//:nth-last-child(表达式)选择所有他们父元素的第n个子元素。计数从最后一个元素开始到第一个
+		//:only-of-type :nth-of-type :nth-last-of-type
+	</script>
+</body>
+</html>

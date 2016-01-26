@@ -4,12 +4,34 @@
 <meta charset="UTF-8">
 <title>可见性选择器</title>
 <script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
-<style type="text/css"></style>
+<style type="text/css">
+p{
+	height:300px;
+	line-height:300px;
+}
+.hidden{
+	display:none;
+}
+.opacity{
+	opacity:0;
+}
+.visibility{
+	visibility:hidden;
+}
+</style>
 </head>
 <body>
-
+	<div class="hidden">我是display:none的DIV标签</div>
+	<div class="opacity">我是透明的DIV标签</div>
+	<div class="visibility">我是不可见的DIV标签</div>
+	<div>我是可见的DIV标签</div>
+	
 <script type="text/javascript">
+//:hidden选取所有不可见的元素（display属性），找到就结束
+alert($('div:hidden').html());
 
+//:visible选取所有可见元素，找到就结束
+alert($('div:visible').html());
 </script>
 </body>
 </html>

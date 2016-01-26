@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>层次选择器</title>
+<script src="../jquery-1.12.0.min.js"></script>
+<script>
+$(function(){
+	//E F选择E元素所有后代元素F(所有子孙后代)
+	$('div span').css('color', '#DDD');
+	
+	//E>F选择E元素的子元素，子选择器（只选择到儿子）
+	$('div>span').css('color', 'red');
+	
+	//E+next选择E元素后紧邻的兄弟元素，等价于.next()
+	$('div+span').css('font-weight', 'bold');
+	//上面等同于下面这句
+	//$('div').next().css('font-weight', 'bold');
+	
+	//E~siblings选择E元素后的所有兄弟姐们元素，等价于.nextAll()
+	$('div~span').css('text-decoration', 'underline');
+})
+
+</script>
+</head>
+<body>
+	<div>
+		<p id="p1">456789123</p>
+		<p><span class="p2">456789123</span></p>
+		<span>abcsdeetertt</span>
+	</div>
+	<div>这个是div标签</div>
+	<span>这个是span标签</span><br />
+	<span>这个是span2标签</span>
+	<p>这个是p标签</p>
+	<span>这个是span3标签</span>
+	<p>这个是p2标签</p>
+	<p>这个是p3标签</p>
+</body>
+</html>

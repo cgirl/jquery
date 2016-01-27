@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>表格隔行变色</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<style>
+#table{
+	width:500px;
+	border:1px solid gray;
+	border-collapse: collapse;
+}
+#table td{
+	border:1px solid gray;
+}
+</style>
+</head>
+<body>
+	<table id="table">
+		<tr>
+			<td>111111</td>
+			<td>222222</td>
+			<td>333333</td>
+			<td>444444</td>
+		</tr>
+		<tr>
+			<td>aaaaaa</td>
+			<td>bbbbbb</td>
+			<td>cccccc</td>
+			<td>dddddd</td>
+		</tr>
+		<tr>
+			<td>111111</td>
+			<td>222222</td>
+			<td>333333</td>
+			<td>444444</td>
+		</tr>
+		<tr>
+			<td>aaaaaa</td>
+			<td>bbbbbb</td>
+			<td>cccccc</td>
+			<td>dddddd</td>
+		</tr>
+		<tr>
+			<td>111111</td>
+			<td>222222</td>
+			<td>333333</td>
+			<td>444444</td>
+		</tr>
+		<tr>
+			<td>aaaaaa</td>
+			<td>bbbbbb</td>
+			<td>cccccc</td>
+			<td>dddddd</td>
+		</tr>
+		<tr>
+			<td>111111</td>
+			<td>222222</td>
+			<td>333333</td>
+			<td>444444</td>
+		</tr>
+		<tr>
+			<td>aaaaaa</td>
+			<td>bbbbbb</td>
+			<td>cccccc</td>
+			<td>dddddd</td>
+		</tr>
+		<tr>
+			<td>111111</td>
+			<td>222222</td>
+			<td>333333</td>
+			<td>444444</td>
+		</tr>
+		<tr>
+			<td>aaaaaa</td>
+			<td>bbbbbb</td>
+			<td>cccccc</td>
+			<td>dddddd</td>
+		</tr>
+	</table>
+	<script>
+		/* $('#table tr').filter(':even').css('background', '#11BB99');
+		$('#table tr').filter(':odd').css('background', '#FFBB99'); */
+		var oTable = document.getElementById('table');
+		var otr = oTable.getElementsByTagName('tr');
+		for(var i=0; i<otr.length; i++){
+			if(i%2==1){
+				otr[i].style.background = '#FFBB99';
+			} else {
+				otr[i].style.background = '#11BB99';
+			}
+			
+		}
+	</script>
+</body>
+</html>

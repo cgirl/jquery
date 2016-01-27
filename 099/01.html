@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM筛选，遍历查找相关方法</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+</head>
+<body>
+	<p>我是第1个p标签</p>
+	<p>我是第2个p标签</p>
+	<p class="third">我是第3个p标签</p>
+	<p>我是第4个p标签</p>
+	<p id="five">我是第5个p标签</p>
+	<p>我是第6个p标签</p>
+	
+	<form>
+		<input type="text" value="111111"/>
+		<input type="text" value="222222"/>
+		<input type="text" value="333333"/>
+	</form>
+	<span></span>
+	
+	<script type="text/javascript">
+		//DOM方法是为了链式操作（下面第2个），选择器是为了查找DOM对象（下面第1个）
+		//eq()选择指定索引的元素
+		$('p:eq(0)').css('background', 'red');
+		$('p').eq(0).css('background', 'red');
+		
+		//filter(表达式)筛选指定表达式的元素
+		$('p').filter(':odd').css('color', 'green');
+		$('p').filter(':even').css('color', 'gray');
+		$('p').filter(':last').css('background', 'pink');
+		$('p').filter(':first').css('font-family', '楷体');
+		$('p').filter('.third').css('font-family', '楷体');
+		$('p').filter('#five').css('font-family', '楷体');
+		
+		//first()选择第一个元素
+		$('p').first().css('font-weight', 'bold');
+		
+		//last()选择最后一个元素
+		$('p').last().css('font-weight', 'bold');
+		
+		//is()检测是否元素返回布尔值
+		$('p').click(function(){
+			if($(this).is('.third')){
+				$(this).css('font-weight', 'bold');
+			}
+		});
+		
+		//has()保留包含特定后代的元素，去掉那些不含有指定后代的元素
+		
+		//not(选择器)从匹配的元素集合中移除指定的元素
+		$('p').not('.third').css('font-size', '30px');
+		
+		//map()将一组元素转换成其他数组
+		var arr = $('input').map(function(){
+			return $(this).val();
+		}).get().join(',');
+		$('span').html(arr);
+		
+		//slice()根据指定的下标范围，选取匹配的元素集合
+		$('p').slice(-4,-2).css('text-decoration', 'underline');
+	</script>
+</body>
+</html>

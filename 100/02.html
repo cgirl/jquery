@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM遍历查找</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+</head>
+<body>
+	<div id="outer" style="position:relative">outer
+		<div id="wrap" style="position:absolute;left:30px;top:50px;">wrap
+			<p id="p1">我是<span>第1个p</span>标签</p>
+			<p id="p2">我是第2个p标签</p>
+			<p>我是第3个p标签</p>
+			<div class="123">我是div标签</div>
+		</div>
+	</div>
+	
+	<form>
+		<input type="text" value="第1个input的值"/>
+		<input type="text" value="第2个input的值"/>
+		<input type="text" value="第3个input的值"/>
+		<input type="text" value="第4个input的值"/>
+	</form>
+	<script>
+		//siblings()前后所有的兄弟元素
+		$('#p2').siblings('div').css('background', '#DDD');
+		
+		//closest()从元素本身开始，在DOM树上逐级向上级元素匹配，并返回最先匹配的祖先元素
+		
+		//contents()元素的子元素，包含文字和注释节点
+		
+		//end()终止当前链的最新过滤操作，并返回匹配的元素的以前状态
+		$('span').parent().css('background', 'pink').end().css('background', '#DDD');
+		
+		//andself()在1.8版本中已废弃
+		
+		//addBack()添加堆栈中元素集合到当前集合，一个选择性的过滤选择器
+		$('#p1').nextAll().addBack().css('color', 'green');
+		
+		//each()遍历一个jQuery对象，为每个匹配的元素执行一个函数
+		$('input').each(function(){
+			alert($(this).val());
+		});
+	</script>
+</body>
+</html>

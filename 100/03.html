@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>特殊符号的处理</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+</head>
+<body>
+	<form>
+		<input type="checkbox" name="gender[]" value="男"/>
+		<input type="checkbox" name="gender[]" value="女"/>
+		<input type="checkbox" name="gender[]" value="保密"/>
+		<input type="submit" value="提交"/>
+		<input type="reset" value="重置"/>
+	</form>
+	<script>
+		$('input[name=gender\\[\\]]').click(function(){
+			alert($(this).val());
+		});
+	</script>
+</body>
+</html>

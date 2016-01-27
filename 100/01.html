@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM遍历查找</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+</head>
+<body>
+	<div id="outer" style="position:relative">outer
+		<div id="wrap" style="position:absolute;left:30px;top:50px;">wrap
+			<p id="p1">我是第1个p标签</p>
+			<p>我是第2个p标签</p>
+			<p>我是第3个p标签</p>
+			<div class="123">我是div标签</div>
+		</div>
+	</div>
+	<script>
+		//children()选取子元素
+		$('#wrap').children('p').css('background', 'gray');
+		
+		//parent()选取父元素
+		$('#p1').parent().css('font-size', '25px');
+		
+		//parents()选取祖先元素
+		$('#p1').parents('#wrap').css('font-weight', 'bold');
+		
+		//parentsUntil()从但当前开始，直到遇到匹配的那个元素为止中间的所有的父元素
+		$('#p1').parentsUntil('#outer').css('background-color', 'pink');
+		
+		//offsetParent()返回父元素中第一个其position设为relative或者absolute的元素，仅对可见元素有效
+		$('#p1').offsetParent().css('font-family', '楷体');
+		
+		//next()选择后面紧邻的兄弟元素
+		$('#p1').next().css('text-decoration', 'underline');
+		
+		//nextAll()选择后面所有兄弟元素
+		$('#p1').nextAll('div').css('color', '#C65789');
+		
+		//nextUntil()从当前元素开始，直到遇到匹配的那个元素为止中间的所有的同辈兄弟元素
+		$('#p1').nextUntil('.123').css('color', '#11DDAA');
+		
+		//prev()前一个兄弟元素
+		$('.123').prev().css('font-size', '40px');
+		
+		//preAll()前面所有的兄弟元素
+		$('.123').prevAll().css('border', '1px solid #FF11AA');
+		
+		//prevUntil()从当前元素开始，直到遇到匹配的那个元素为止中间的所有兄弟元素
+		$('.123').prevUntil('#p1').css('font-family', '华文行楷');
+	</script>
+</body>
+</html>

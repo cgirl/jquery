@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>表单属性选择器</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+</head>
+<body>
+	<input type="text" value="我是不能修改的文本框" disabled="disabled"/>
+	<input type="text" value="我是可以修改的文本框"/>
+	<input type="checkbox" value="aaa" checked="checked"/>
+	<input type="checkbox" value="ccc" />
+	<input type="checkbox" value="ddd" />
+	
+	<select>
+		<option value="我是第1个选项">我是第1个选项</option>
+		<option value="我是第2个选项" selected="selected">我是第2个选项</option>
+		<option value="我是第3个选项">我是第3个选项</option>
+	</select>
+	<script type="text/javascript">
+	//:enabled选择所有可用元素
+	alert($('input:enabled').val());
+	
+	//:disabled选择所有不可用元素
+	alert($('input:disabled').val());
+	alert($('input[disabled=disabled]').val());
+	
+	//:checked选择已选中元素
+	alert($(':checked').val());
+	alert($('input[checked=checked]').val());
+	
+	//:selected选择所有被选中的选项元素
+	alert($(':selected').val());
+	alert($('select option[selected=selected]').val());
+	
+	//:focus选择当前获取焦点的元素
+	</script>
+</body>
+</html>

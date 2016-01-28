@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>实例1：查看修改删除</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<style type="text/css">
+#table{border:1px solid #abcdef;border-collapse:collapse;width:600px;}
+th{border:1px solid #abcdef}
+td{border:1px solid #abcdef;text-align:center}
+td a{margin-left:10px;color:#f00}
+tr{height:30px}
+.popDiv{width:500px;padding:10px;border:1px solid red;position:absolute;left:50%;margin-left:-250px;top:100px;background:white;display:none;z-index:4}
+.popDiv p{border-bottom:1px solid red}
+</style>
+</head>
+
+<body>
+	<table id="table">
+		<tr>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>职位</th>
+			<th>工资</th>
+			<th>操作</th>
+		</tr>
+		<tr>
+			<td>张三</td>
+			<td>23</td>
+			<td>前端工程师</td>
+			<td>6000</td>
+			<td><a href="#" class="view">查看</a><a href="#" class="delete">删除</a><a href="#">修改</a></td>
+		</tr>
+		<tr>
+			<td>李四</td>
+			<td>28</td>
+			<td>C语言开发工程师</td>
+			<td>10000</td>
+			<td><a href="#" class="view">查看</a><a href="#" class="delete">删除</a><a href="#">修改</a></td>
+		</tr>
+		<tr>
+			<td>王五</td>
+			<td>30</td>
+			<td>PHP开发工程师</td>
+			<td>30000</td>
+			<td><a href="#" class="view">查看</a><a href="#" class="delete">删除</a><a href="#">修改</a></td>
+		</tr>
+	</table>
+	<div class="popDiv">
+		<p><strong>姓名：</strong><span></span></p>
+		<p><strong>年龄：</strong><span></span></p>
+		<p><strong>职位：</strong><span></span></p>
+		<p><strong>工资：</strong><span></span></p>
+		<a href="#" class="close">关闭</a>
+	</div>
+	<script type="text/javascript">
+		//查看
+		$('.view').click(function(){
+			var maskHeight = $(document).height();
+			var maskWidth = $(document).width();
+			//添加遮罩层
+			$('<div class="mask"></div>').appendTo('body');
+			$('div.mask').css({
+				'opacity':0.4,
+				'background':'#DDD',
+				'position':'absolute',
+				'left':0,
+				'top':0,
+				'width':maskWidth,
+				'height':maskHeight,
+				'z-index':2
+			});
+			
+			//alert('11');
+			var arr=[];
+			$(this).parent().siblings().each(function(){
+				arr.push($(this).text());
+			});
+			//alert(arr);
+			$('.popDiv').show().children().each(function(i){
+				$(this).children('span').text(arr[i]);
+			});
+		});
+		
+		//关闭
+		$('.close').click(function(){
+			$(this).parent().hide();
+			$('div.mask').hide();
+		});
+		
+		//删除
+		$('a.delete').click(function(){
+			$(this).parents('tr').remove();
+		})
+	</script>
+</body>
+</html>

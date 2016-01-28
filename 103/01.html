@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery选择器的优化</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+</head>
+<!-- 
+《jquery选择器的优化》
+1.优先使用id选择器
+2.在class选择器前添加标签名
+3.采用find()，而不使用上下文查询
+4.强大的链式操作比缓存更快
+5.从左至右的模型
+ -->
+<body>
+	<p id="a" class="a"></p>
+	
+	<script>
+		$('#p');
+		$('p.a');
+	</script>
+</body>
+</html>

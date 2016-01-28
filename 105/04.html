@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery中的DOM操作--删除节点</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+</head>
+<!-- 
+《jquery中的DOM操作》
+1.查找节点（略）
+2.创建节点
+3.插入节点
+4.包裹节点
+5.删除节点
+6.复制节点
+7.替换节点
+8.遍历节点（略）
+9.操作DOM节点属性
+10。操作样式
+11.设置和获取节点内的html和文本
+ -->
+<body>
+	<p>我是p标签</p>
+	<span>我是span标签</span>
+	<span>我是span标签</span>
+	<span>我是span标签</span>
+	<div>我是<strong>div</strong>标签</div>
+	<div>我是div标签</div>
+	<div>我是div标签</div>
+	<em>我是em标签</em>
+	<script type="text/javascript">
+		//1.remove删除节点
+		$('p').remove();
+		
+		//2.empty清空节点
+		$('span').empty();
+		
+		//3.unwrap删除元素的父元素
+		$('strong').unwrap();
+		
+		//4.detach删除节点，但是保留jquery对象
+	</script>
+</body>
+</html>

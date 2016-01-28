@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery中的DOM操作--复制节点</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+</head>
+<!-- 
+《jquery中的DOM操作》
+1.查找节点（略）
+2.创建节点
+3.插入节点
+4.包裹节点
+5.删除节点
+6.复制节点
+7.替换节点
+8.遍历节点（略）
+9.操作DOM节点属性
+10。操作样式
+11.设置和获取节点内的html和文本
+ -->
+<body>
+	<a href="#">点击</a>
+	<script type="text/javascript">
+		$('a').click(function(){
+			alert('1111');
+		});
+		
+		//clone(bool)克隆节点
+		var newA = $('a').clone(true);
+		$('body').append(newA);
+		
+	</script>
+</body>
+</html>

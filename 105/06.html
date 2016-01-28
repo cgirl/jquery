@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery中的DOM操作--替换节点</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+</head>
+<!-- 
+《jquery中的DOM操作》
+1.查找节点（略）
+2.创建节点
+3.插入节点
+4.包裹节点
+5.删除节点
+6.复制节点
+7.替换节点
+8.遍历节点（略）
+9.操作DOM节点属性
+10.操作样式
+11.设置和获取节点内的html和文本
+ -->
+<body>
+	<p>替换节点</p>
+	<script type="text/javascript">
+		//replaceWith()将所有匹配的元素替换成指定的HTMl或DOM元素
+		$('p').replaceWith('<strong>我是strong标签</strong>');
+		
+		//用指定的元素替换掉所有选择到的匹配到的元素
+		$('<h1>我是h1</h1>').replaceAll('strong');
+	</script>
+</body>
+</html>

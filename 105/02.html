@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery中的DOM操作--插入节点</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+</head>
+<!-- 
+《jquery中的DOM操作》
+1.查找节点（略）
+2.创建节点
+3.插入节点
+4.包裹节点
+5.删除节点
+6.复制节点
+7.替换节点
+8.遍历节点（略）
+9.操作DOM节点属性
+10。操作样式
+11.设置和获取节点内的html和文本
+ -->
+<body>
+	<p>内部插入</p>
+	<span>外部插入</span>
+	<script type="text/javascript">
+	//内部插入
+		//1.append()向每个匹配的元素尾部插入DOM，匹配元素在前
+		var strong = $('<strong>append：我是被插入的新标签</strong>');
+		$('p').append(strong);
+		
+		//2.appendTo()向每个匹配元素尾部插入DOM，匹配元素在后
+		var strong1 = $('<strong>appendTo：我是被插入的新标签</strong>');
+		strong1.appendTo('strong');
+		
+		//3.向每个匹配的元素头部插入DOM，匹配元素在前
+		var strong2 = $('<div>prepend：我是被插入的新标签</div>');
+		$('p').prepend(strong2);
+		
+		//4.向每个匹配元素头部插入DOM，匹配元素在后
+		var strong3 = $('<strong>prependTo：我是被插入的新标签</strong>');
+		strong3.prependTo('div');
+		
+	//外部插入
+		//1.after()在匹配元素之后插入DOM，匹配元素在前
+		var strong4 = $('<strong>after：我是被插入的新标签</strong>');
+		$('span').after(strong4);
+		
+		//2.insertAfter()在匹配元素之后插入DOM，匹配元素在后
+		var strong5 = $('<strong>insertAfter：我是被插入的新标签</strong>');
+		strong5.insertAfter('span');
+		
+		//3.before()在匹配元素之前插入DOM，匹配元素在前
+		var strong6 = $('<strong>before：我是被插入的新标签</strong>');
+		$('span').before(strong6);
+		
+		//4.insertBefore()在匹配元素之前插入DOM，匹配元素在后
+		var strong7 = $('<strong>insertBefore：我是被插入的新标签</strong>');
+		strong7.insertBefore('span');
+		
+	</script>
+</body>
+</html>

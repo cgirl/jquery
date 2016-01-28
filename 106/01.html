@@ -52,19 +52,26 @@
 		$('p').css({
 			fontSize:'30px', /* 'font-size':'30px' */
 			'background':'#DDD',
-			'border':'10px solid red'
+			'border':'10px solid red',
+			'padding':'10px',
+			'margin':'10px'
 		});
 		
-		//height()获取高度
+		//height()获取高度(文字的高度)
 		alert($('p').height());
 		
-		//innerHeight()获取padding的高度，不包括border
+		//innerHeight()获取padding的高度，不包括border(padding+文字的高度)
 		alert($('p').innerHeight());
 		
-		//outerHeight(bool)参数为true时获取内外边距和border的高度
+		//outerHeight(bool)参数不写，则默认值为false，不会把margin值包含进去(border+padding+文字高度)
+		alert($('p').outerHeight());
 		
-		//offset()获取元素的位置
+		//outerHeight(bool)参数为true时，会包含margin的值(margin+border+padding+文字高度)
+		alert($('p').outerHeight(true));
 		
+		//offset()获取元素的位置，浏览器左侧默认有8个字节的位置
+		var a = $('p').offset();
+		alert('left:'+a.left+' top:'+a.top);
 	</script>
 </body>
 </html>

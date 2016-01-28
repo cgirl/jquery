@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery中的样式操作</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<style type="text/css">
+*{margin:0}
+div{position:relative;left:20px;top:20px;width:200px;height:200px;background:red}
+p{position:absolute;left:100px;top:50px;width:50px;height:50px;background:yellow}
+button{position:fixed; top:50px; left:100px}
+</style>
+</head>
+<!-- 
+《jquery中的DOM操作》
+1.查找节点（略）
+2.创建节点
+3.插入节点
+4.包裹节点
+5.删除节点
+6.复制节点
+7.替换节点
+8.遍历节点（略）
+9.操作DOM节点属性
+10.操作样式
+11.设置和获取节点内的html和文本
+-->
+<body style='height:8000px; width:8000px'>
+	<div>div
+		<p>jquery中的样式操作</p>
+	</div>
+	<button>弹出滚动条离顶部的距离</button>
+	
+	<script type="text/javascript">
+	//offsetParent()里匹配元素最近的有position属性的元素
+	
+	//position相对于offsetParent()的坐标
+	var a = $('p').position(); //相对于父元素的距离
+	var b = $('p').offset(); //相对于文本DOM的距离
+	alert('position:'+a.left);
+	alert('offset:'+b.left);
+	
+	//scrollTop()纵向滚动条的位置+scollLeft()横向滚动条的位置
+	$('button').click(function(){
+		alert('scrollTop：'+$(window).scrollTop()+' scollLeft:'+$(window).scrollLeft());
+	})
+	
+	</script>
+</body>
+</html>

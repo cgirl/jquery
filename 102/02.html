@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>tab标签页--jquery实现</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<style>
+*{
+	padding:0;
+	margin:0;
+}
+
+ul{
+	list-style-type:none;
+}
+
+body{
+	margin:50px;
+}
+
+#ul{
+	height:30px;
+	margin-bottom:10px;
+}
+
+#ul li{
+	height:30px;
+	line-height:30px;
+	padding:0 15px;
+	border:1px solid #abcdef;
+	float:left;
+	margin-right:3px;
+	cursor:pointer;
+}
+
+#ul li.current{
+	background:#abcdef;
+}
+
+#content div{
+	width:300px;
+	height:200px;
+	border:1px solid #abcdef;
+	display:none;
+}
+
+#content div.show{
+	display:block;
+}
+</style>
+</head>
+<body>
+	<ul id="ul">
+		<li class="current">php</li>
+		<li>ruby</li>
+		<li>python</li>
+	</ul>
+	<div id="content">
+		<div class="show">php......介绍</div>
+		<div>ruby......介绍</div>
+		<div>python......介绍</div>
+	</div>
+	
+	<script>
+		//1.方法一   实现
+		/* $('#ul li').click(function(){
+			//1.点击li的时候要切换样式
+			$(this).addClass('current').siblings().removeClass('current');
+			//2.根据li的索引值，来确定哪个div显示，其他div隐藏
+			$('#content>div').eq($(this).index()).show().siblings().hide();
+		}) */
+		
+		//2.方法二    实现
+		$('#ul li').click(function(){
+			$(this).addClass('current').siblings().removeClass('current').parent().next().children().eq($(this).index()).show().siblings().hide();
+		})
+	</script>
+</body>
+</html>

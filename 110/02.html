@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery普通事件</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<style type="text/css">
+
+</style>
+</head>
+<!-- 
+	《jquery中的事件和事件对象》
+	1.加载文档事件
+	2.鼠标事件
+	3.键盘事件
+	4.表单事件
+	5.浏览器事件
+	6.事件对象
+	7.绑定事件的方法
+	8.移除事件的方法
+	9.事件冒泡（略）
+	10.事件命名空间
+ -->
+<body>
+	<input type="text" value="keydown" id="keydown"/>
+	<input type="text" value="keyup" id="keyup"/>
+	<input type="text" value="keypress" id="keypress"/>
+	
+	<script type="text/javascript">
+	//键盘事件
+		//keydown()键盘按下事件
+		$('#keydown').keydown(function(){
+			alert($(this).val());
+		});
+		
+		//keyup()键盘弱起事件
+		$('#keyup').keyup(function(){
+			alert($(this).val());
+		});
+		
+		//keypress类似于keydown()，但官方文档上说有区别
+		$('#keypress').keypress(function(){
+			alert($(this).val());
+		});
+	</script>
+</body>
+</html>

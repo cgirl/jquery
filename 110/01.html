@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery普通事件</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<style type="text/css">
+
+</style>
+</head>
+<!-- 
+	《jquery中的事件和事件对象》
+	1.加载文档事件
+	2.鼠标事件
+	3.键盘事件
+	4.表单事件
+	5.浏览器事件
+	6.事件对象
+	7.绑定事件的方法
+	8.移除事件的方法
+	9.事件冒泡（略）
+	10.事件命名空间
+ -->
+<body>
+	<p id="click">click()单击左键事件</p>
+	<span>dblclick()双击左键事件</span>
+	<div>
+		<input type="text" value="123456"/>
+		<span id="focus" style="display:none">已获取到焦点</span>
+	</div>
+	<p id="mousedown">mousedown()鼠标按下事件</p>
+	<p id="mouseup">mouseup()鼠标抬起事件</p>
+	<p id="mousemove">mousemove()鼠标移动事件</p>
+	<p id="mouseover">mouseover()鼠标进入事件</p>
+	<p id="mouseout">mouseout()鼠标离开事件</p>
+	<p id="mouseenter">mouseenter()鼠标进入事件</p>
+	<p id="mouseleave">mouseleave()鼠标离开事件</p>
+	<p>click()单击左键事件</p>
+	
+	<script type="text/javascript">
+	//加载文档事件
+		//ready()略 ---$(document).ready()
+		//$.holdReady(bool)暂停或恢复ready事件 --- jquery的工具函数(以后会讲)
+		//load(),unload() 1.8以上已废弃
+	
+	//鼠标事件
+		//click()单击左键事件：当鼠标左键按下，然后再抬起鼠标左键，才算完成一次click事件
+		$('#click').click(function(){
+			alert($(this).text());
+		});
+		
+		//dblclick()双击左键事件
+		$('span').dblclick(function(){
+			alert($(this).text());
+		});
+		
+		//focusin()获得焦点事件，可作用于父级(其子孙后代有焦点元素即可)
+		$('div').focusin(function(){
+			$(this).children('span').show();
+		})
+		
+		//focusout()失去焦点事件，可作用于父级
+		//mousedown()鼠标按下事件，和click()有区别
+		$('#mousedown').mousedown(function(){
+			alert($(this).text());
+		})
+		
+		//mouseup()鼠标抬起事件
+		$('#mouseup').mouseup(function(){
+			alert($(this).text());
+		})
+		
+		//mousemove()鼠标移动事件
+		/* $(document).mousemove(function(e){
+			var x = e.pageX;
+			var y = e.pageY;
+			$('input').val(x+','+y);
+		}) */
+		
+		//mouseover()鼠标离开事件
+		$('#mouseover').mouseover(function(){
+			$(this).css('background', '#DDD');
+		})
+		
+		//mouseout()鼠标离开事件
+		$('#mouseout').mouseout(function(){
+			$(this).css('background', 'red');
+		})
+		
+		//mouseenter()鼠标进入事件(禁止冒泡)
+		$('#mouseenter').mouseenter(function(){
+			$(this).css('background', 'gray');
+		})
+		
+		//mouseleave()鼠标离开事件(禁止冒泡)
+		$('#mouseenter').mouseenter(function(){
+			$(this).css('background', 'gray');
+		})
+		
+		//hover()同时绑定mouseenter和mouseleave事件
+	</script>
+</body>
+</html>

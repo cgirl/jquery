@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>事件对象</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<style type="text/css">
+*{padding:0;margin:0}
+ul{list-style-type:none;}
+body{margin:50px}
+div{width:200px;height:24px;line-height:24px;border:1px solid #ccc}
+ul{width:200px;border:1px solid #ccc;display:none}
+ul li{height:24px;line-height:24px}
+ul li:hover{background:#cfcfcf}
+</style>
+</head>
+<!-- 
+	《jquery中的事件和事件对象》
+	1.加载文档事件
+	2.鼠标事件
+	3.键盘事件
+	4.表单事件
+	5.浏览器事件
+	6.事件对象
+	7.绑定事件的方法
+	8.移除事件的方法 
+	9.事件冒泡（略）
+	10.事件命名空间
+ -->
+<body style="height:3000px">
+	<input id="event" type="text" style="position:fixed;top:10px;"/>
+	
+	<form action="http://www.zixue.it" id="form1">
+		<p>用户名：<input type="text" value="111111"  name="user" /></p>
+		<p>密&nbsp;码：<input type="password" value="222222" name="password"/></p>
+		<input type="submit" value="提交"/>
+	</form>
+	<hr>
+	<div id="div">请选择城市</div>
+	<ul>
+		<li>北京</li>
+		<li>天津</li>
+		<li>上海</li>
+		<li>重庆</li>
+	</ul>
+	
+	<script type="text/javascript">
+	//事件对象
+		//event.pageX获取鼠标相对于文档的X轴坐标
+		//event.pageY获取鼠标相对于文档的Y轴坐标
+		$(document).click(function(e){
+			var x = e.pageX;
+			var y = e.pageY;
+			
+			$('#event').val(x+', '+y);
+		});
+	
+		//event.preventDefault()阻止浏览器默认行为
+		//submit()表单提交事件
+		$('#form1').submit(function(e){
+			alert('提交成功!');
+			e.preventDefault();
+		});
+		
+		//event.stopPropagation()阻止冒泡
+		$('#div').click(function(e){
+			$('ul').show();
+			e.stopPropagation();
+		});
+		
+		$(document).click(function(){
+			$('ul').hide();
+		})
+		
+		//event.which监听键盘输入和鼠标操作
+		
+	</script>
+</body>
+</html>

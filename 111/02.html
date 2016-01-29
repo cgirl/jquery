@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery浏览器事件</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<style type="text/css">
+
+</style>
+</head>
+<!-- 
+	《jquery中的事件和事件对象》
+	1.加载文档事件
+	2.鼠标事件
+	3.键盘事件
+	4.表单事件
+	5.浏览器事件
+	6.事件对象
+	7.绑定事件的方法
+	8.移除事件的方法
+	9.事件冒泡（略）
+	10.事件命名空间
+ -->
+<body style="height:3000px">
+	
+	
+	<script type="text/javascript">
+	//resize()浏览器窗口改变大小事件
+	$(window).resize(function(){
+		alert('浏览器窗口已改变')
+	});
+	
+	//scroll()浏览器滚动条移动时发生的事件
+	$(window).scroll(function(){
+		$('body').append('<div>滚动条位置发生偏移</div>')
+	});
+	
+	//error() 1.8中废弃
+	
+	</script>
+</body>
+</html>

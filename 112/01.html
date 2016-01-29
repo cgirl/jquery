@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery事件绑定与移除</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<style type="text/css">
+
+</style>
+</head>
+<!-- 
+	《jquery中的事件和事件对象》
+	1.加载文档事件
+	2.鼠标事件
+	3.键盘事件
+	4.表单事件
+	5.浏览器事件
+	6.事件对象
+	7.绑定事件的方法
+	8.移除事件的方法
+	9.事件冒泡（略）
+	10.事件命名空间
+ -->
+<body>
+	<p id="bind">绑定事件</p>
+	<p id="unbind">移除事件</p>
+	<p id="one">执行一次事件，然后销毁该事件</p>
+	<p id="delegate">虽然未被废弃，但官方推荐使用on()代替</p>
+	<p id="on">on()绑定事件</p>
+	<p><span>事件命名空间</span></p>
+	
+	<script type="text/javascript">
+		//bind()绑定事件
+		$('#bind').bind('click', function(){
+			alert($(this).text());
+		})
+		
+		//unbind()移除事件
+		$('#unbind').mouseover(function(){
+			$(this).css('background', 'red');
+		})
+		$('#unbind').unbind('mouseover');
+		
+		//on()绑定事件
+		$('#on').on('click', function(){
+			$(this).append('<p>我是新增加的p标签</p>');
+		});
+		
+		//off()移除事件
+		
+		//one()执行一次事件，然后销毁该事件
+		$('#one').one('click', function(){
+			alert($(this).text());
+		})
+		
+		//delegate()虽然未被废弃，但官方推荐使用on()代替[只针对绑定匹配的元素才会有效]
+		$('body').delegate('#delegate', 'click',  function(){
+			$(this).append('<p>我是新增加的p标签</p>');
+		});
+		
+		//undelegate()用off代替
+		
+	//事件命名空间
+		//第一个开发人员，给span标签添加click事件，使他的背景颜色变成红色(直接添加click事件)
+		//第二个开发人员，给span标签添加click四件，使他的文本变成蓝色(直接添加click事件)
+		//第三个开发人员，不想让span标签在点击的时候添加红色的背景，只想让p标签里的文本颜色变成蓝色，那么他用unbind方法把p标签上的click事件给移除了
+		$('span').bind('click.background', function(){
+			$(this).css('background', 'red');
+		});
+		$('span').bind('click.color', function(){
+			$(this).css('color', 'blue');
+		});
+		$('span').unbind('click.background');
+	</script>
+</body>
+</html>

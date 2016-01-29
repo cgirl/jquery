@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery事件补遗</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<style type="text/css">
+p{background:#f00;padding:20px}
+a{background:#f90;padding:20px}
+</style>
+</head>
+<body>
+	<p>
+		<a href="###">点击</a>
+	</p>
+	
+	<script type="text/javascript">
+		$('a').click(function(){
+			alert('a元素被点击了');
+		});
+		$('p').click(function(){
+			alert('p元素被点击了');
+		});
+		//$('a').trigger('click');会冒泡
+		//triggerHandler模拟事件发生，能阻止冒泡
+		$('a').triggerHandler('click');
+	</script>
+</body>
+</html>

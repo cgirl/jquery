@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery事件补遗</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+	<p id="hover">hover</p>
+	<a href="###">trigger</a>
+	
+	<script type="text/javascript">
+		//hover是模拟鼠标进入（mouseenter）和鼠标离开(mouseleave)的事件
+		$('#hover').hover(function(){
+			$(this).css('background', 'red');
+		}, function(){
+			$(this).css('background', 'none');
+		});
+		
+		//trigger模拟事件发生
+		$('a').click(function(){
+			alert('我被点击了!!!');
+		});
+		$('a').trigger('click');
+
+	</script>
+</body>
+</html>

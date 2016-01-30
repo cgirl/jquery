@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery仿微博发布框</title>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+	<textarea rows="10" cols="30"></textarea>
+	<span>你还可以输入<strong style="color:red">140</strong>个字</span>
+	
+	<script type="text/javascript">
+		var maxLength = 140;
+		$('textarea').keyup(function(){
+			var tmpLength = $(this).val().length;
+			$('strong').text(maxLength-tmpLength);
+			if(parseInt($('strong').text()) < 0){
+				$('strong').text('0');
+				var val = $(this).val().substring(0, 141);
+				//substr(不推荐使用，ECMScript没有标准化substr())
+				$(this).val(val);
+			};
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery动画队列</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<style type="text/css">
+p{width:300px;height:300px;background:#abcdef}
+</style>
+</head>
+<body>
+	<a href="###">动画队列</a>
+	<p>bbbbbbbb</p>
+	
+	<script type="text/javascript">
+		//stop()
+		$('a').hover(function(){
+			$('p').stop(false, true).slideDown(500);
+		}, function(){
+			$('p').stop(false, true).slideUp(500);
+		});
+	</script>
+</body>
+</html>

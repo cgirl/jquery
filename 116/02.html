@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery动画队列</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<style type="text/css">
+div{width:30px;height:30px;background:#f80;position:absolute;left:10px;top:40px}
+</style>
+</head>
+<body>
+	<button>RUN</button>
+	<input id="stop" type="button" value="stop"/>
+	<input id="dequeue" type="button" value="dequeue"/>
+	<input id="finish" type="button" value="finish"/>
+	<div></div>
+	
+	<script type="text/javascript">
+		$('button').click(function(){
+			$('div').animate({
+				'top':'200px'
+			}, 2000).animate({
+				'left':'200px'
+			}, 2000).animate({
+				'top':'40px'
+			},2000).animate({
+				'left':'10px'
+			},2000);
+		});
+		
+		//stop(bool, bool)
+		$('#stop').click(function(){
+			$('div').stop(true, true);
+		});
+		
+		//dequeque()
+		$('#dequeue').click(function(){
+			$('div').dequeue();
+		});
+		
+		//finish()--不常用
+		$('#finish').click(function(){
+			$('div').finish();
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery基础动画与渐变及滑动动画</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<style type="text/css">
+p{width:300px;padding:10px;border:1px solid #abcdef;display:none}
+</style>
+</head>
+<body>
+	<a id="slideDown" href="###">显示</a>
+	<a id="slideUp" href="###">隐藏</a>
+	<a id="slideToggle" href="###">点击</a>
+	<p>
+		在本教程中，您将通过教程以及许多在线实例，学到如何通过使用 jQuery 应用 JavaScript 效果。
+		jQuery 是一个“写的更少，但做的更多”的轻量级 JavaScript 库。
+		基本上，您将学习到如何选取 HTML 元素，以及如何对它们执行类似隐藏、移动以及操作其内容等任务。
+	</p>
+	
+	<script type="text/javascript">
+	//jquery中的滑动动画
+		//slideDown向下滑动显示
+		$('#slideDown').click(function(){
+			$('p').slideDown(600); //600是毫秒数;fast slow normal
+		});
+	
+		//slideUp向上滑动收起
+		$('#slideUp').click(function(){
+			$('p').slideUp(600); //600是毫秒数;fast slow normal
+		});
+		
+		//切换滑动
+		$('#slideToggle').click(function(){
+			$('p').slideToggle(600); //600是毫秒数;fast slow normal
+		});
+	</script>
+</body>
+</html>

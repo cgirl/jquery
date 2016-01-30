@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery基础动画与渐变及滑动动画</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<style type="text/css">
+p{width:300px;padding:10px;border:1px solid #abcdef;display:none}
+</style>
+</head>
+<body>
+	<a id="fadeOut" href="###">隐藏</a>
+	<a id="fadeIn" href="###">显示</a>
+	<a id="fadeTo" href="###">点击</a>
+	<a id="fadeToggle" href="###">模拟点击</a>
+	<p>
+		在本教程中，您将通过教程以及许多在线实例，学到如何通过使用 jQuery 应用 JavaScript 效果。
+		jQuery 是一个“写的更少，但做的更多”的轻量级 JavaScript 库。
+		基本上，您将学习到如何选取 HTML 元素，以及如何对它们执行类似隐藏、移动以及操作其内容等任务。
+	</p>
+	
+	<script type="text/javascript">
+	//jquery中的渐变动画
+		//透明度opacity从0变成1
+		$('#fadeIn').click(function(){
+			$('p').fadeIn(1000);
+		});
+		
+		//透明度opacity从1变成0
+		$('#fadeOut').click(function(){
+			$('p').fadeOut(1000);
+		});
+		
+		//渐变到指定的透明度
+		$('#fadeTo').click(function(){
+			$('p').fadeTo(1000, .3, function(){
+				alert('fadeTo方法执行完成');
+			});
+		});
+		
+		//切换渐变
+		$('#fadeToggle').click(function(){
+			$('p').fadeToggle(1000);
+		});
+	</script>
+</body>
+</html>

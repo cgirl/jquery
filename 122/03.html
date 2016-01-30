@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery中的ajax-$.ajax</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<style type="text/css">
+div{color:red}
+</style>
+</head>
+<body>
+	<input type="text" name="username" id="username"/>
+	<input type="button" value="检验" />
+	<div></div>
+	
+	<script type="text/javascript">
+		$('input[type=button]').click(function(){
+			var send = {'username':$('#username').val()};
+			$.ajax({
+				'url':'02-process.php',
+				'data':send,
+				'type':'post',
+				'success':function(data){
+					if (data == true){
+						$('div').html('用户名'+data+'可以注册');
+					} else {
+						$('div').html('用户名不可以是admin');
+					}
+				}
+			})
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery动画算法插件</title>
+<script type="text/javascript" src="../jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="../jquery.easing.1.3.js"></script>
+<style type="text/css">
+div{width:200px;height:200px;background:#abcdef;position:absolute;left:10px;top:40px;display:none}
+</style>
+</head>
+<body>
+	<input type="button" value="点击" />
+	<div></div>
+	
+	<script type="text/javascript">
+		$('input').click(function(){
+			$('div').slideDown(500, 'easeOutBounce');
+		});
+	</script>
+</body>
+</html>

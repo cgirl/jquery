@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery中的ajax-jqueryDom.load</title>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+<style type="text/css">
+div{width:200px;height:200px;border:1px solid #ff33aa}
+</style>
+</head>
+<body>
+	<input id="text" type="button" value="加载txt"/>
+	<input id="html" type="button" value="加载html"/>
+	<div class="load"></div>
+	
+	<script type="text/javascript">
+		$('#text').click(function(){
+			$('.load').load('01-test.txt?date='+Math.random());
+		});
+		$('#html').click(function(){
+			$('.load').load('01-test.html?date='+Math.random()+' #test2');
+		})
+	</script>
+</body>
+</html>

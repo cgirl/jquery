@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery页面搜索实例(本地搜索)</title>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+<style type="text/css">
+table{width:700px;border:1px solid #abcdef;border-collapse:collapse}
+tr{height:30px}
+th, td{border:1px solid #abcdef;text-align:center;}
+</style>
+</head>
+<body>
+	<table>
+		<tr id="thead">
+			<th>姓名</th>
+			<th>性别</th>
+			<th>电话</th>
+		</tr>
+		
+		<tr>
+			<td>张三</td>
+			<td>男</td>
+			<td>15611949745</td>
+		</tr>
+		<tr>
+			<td>李四</td>
+			<td>男</td>
+			<td>15611949744</td>
+		</tr>
+		<tr>
+			<td>移动客服</td>
+			<td>女</td>
+			<td>10086</td>
+		</tr>
+		<tr>
+			<td>移动充值</td>
+			<td>女</td>
+			<td>13800138000</td>
+		</tr>
+	</table>
+	
+	<input type="text" />
+	<input type="button" value="搜索"/>
+	
+	<script type="text/javascript">
+		$('input[type=button]').click(function(){
+			var text = $('input[type=text]').val();
+			$('table tr:not("#thead")').hide().filter(':contains("'+text+'")').show();
+		});
+	</script>
+</body>
+</html>

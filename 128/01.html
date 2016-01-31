@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery类级别插件开发</title>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="01-test.js"></script>
+<style type="text/css">
+</style>
+</head>
+<body>
+	<input type="button" value="点击"/>
+	
+	<script type="text/javascript">
+		var str1 = '我是通过调用插件参数弹出的警告框1';
+		var str2 = '我是通过调用插件参数弹出的警告框2';
+		var str3 = '我是通过调用插件extend弹出的警告框3';
+		var str4 = '我是通过调用插件extend弹出的警告框4';
+		var str5 = '我是有命名空间插件的警告框4';
+		$('input').click(function(){
+			$.myAlert1(str1);
+			$.myAlert2(str2);
+			$.myAlert3(str3);
+			$.myAlert4(str4);
+			$.zixueit.myAlert1(str5);
+		})
+	</script>
+</body>
+</html>

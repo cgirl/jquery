@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery中的ajax与XML数据处理</title>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+<style type="text/css">
+</style>
+</head>
+<body>
+	<input id="text" type="button" value="获取新闻列表"/>
+	<div id="info">
+		<ul></ul>
+	</div>
+	
+	<script type="text/javascript">
+		$('#text').click(function(){
+			$.ajax({
+				url:'01-test.php?data='+Math.random(),
+				type:'get',
+				dataType:'xml',
+				success:function(xml){
+					$(xml).find('title').each(function(){
+						//操作xml文件时，html()方法不可用
+						$('#info>ul').append('<li>'+$(this).text()+'</li>');
+					});
+				}
+			})
+		});
+	
+	$(document).ajaxStart(function(){
+		$('#loading').show();
+	});
+	
+	$(document).ajaxStop(function(){
+		$('#loading').hide();
+	})
+	</script>
+</body>
+</html>

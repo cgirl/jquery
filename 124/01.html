@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery中的ajax中新闻实例与数组</title>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+<style type="text/css">
+</style>
+</head>
+<!-- 
+	前端与程序员之间的数据约定
+	处理不同种类数据的方法
+	ajax执行时的提示
+	ajax中的细节（编码和提交方式）
+-->
+<body>
+	<input id="text" type="button" value="获取新闻列表"/>
+	<div id="info"><ul></ul></div>
+	
+	<script type="text/javascript">
+	//返回纯文本
+		$('#text').click(function(){
+			var ul=$('#info>ul');
+			$.ajax({
+				url:'01-test.php?data='+Math.random(),
+				type:'get',
+				success:function(data){
+					var res = eval(data);
+					for(var i=0; i<res.length; i++){
+						ul.append('<li>'+res[i].title+' <em>'+res[i].pubTime+'</em></li>');
+					}
+				}
+			})
+		})
+	</script>
+</body>
+</html>

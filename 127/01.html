@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery中的ajax的实例与细节</title>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+<style type="text/css">
+</style>
+</head>
+<body>
+	<input id="text" type="button" value="获取远程信息"/>
+	<div id="info">
+	</div>
+	<span style="color:red"></span>
+	
+	<script type="text/javascript">
+		$('#text').click(function(){
+			$.ajax({
+				url:'01-test.php?data='+Math.random(),
+				type:'get',
+				timeout:1000,
+				success:function(data){
+					$('#info').html(data);
+				},
+				error:function(jqXHR, textStatus, errorThrown){
+					if (errorThrown == "Not Found"){
+						$('span').html('你请求的网页君迷路了');
+					}
+					if (textStatus == "timeout"){
+						$('span').html('您请求的网页君去卫生间了');
+					}
+				}
+			})
+		});
+		
+		$(document).ajaxError(function(){
+			$('span').html('ajax请求错误');
+		})
+	</script>
+</body>
+</html>

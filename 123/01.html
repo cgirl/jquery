@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery中的ajax的实例及json格式</title>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+<style type="text/css">
+div{width:200px;height:200px;border:1px solid #ff33aa}
+</style>
+</head>
+<!-- 
+	前端与程序员之间的数据约定
+	处理不同种类数据的方法
+	ajax执行时的提示
+	ajax中的细节（编码和提交方式）
+-->
+<body>
+	<input id="text" type="button" value="获取信息"/>
+	<div id="info"></div>
+	
+	<script type="text/javascript">
+	//返回纯文本
+		$('#text').click(function(){
+			$.ajax({
+				url:'01-test.php?data='+Math.random(),
+				type:'get',
+				success:function(data){
+					$('#info').html(data);
+				}
+			})
+		})
+	</script>
+</body>
+</html>

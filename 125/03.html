@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery中的ajax中新闻实例与数组</title>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+<style type="text/css">
+</style>
+</head>
+<!-- 
+	前端与程序员之间的数据约定
+	处理不同种类数据的方法
+	ajax执行时的提示(ing)
+	ajax中的细节（编码和提交方式）
+-->
+<body>
+	<form id="form">
+		用户名：<input id="username" name="username" type="text"/><br />
+		邮&nbsp;箱：<input id="email" name="email" type="text"/><br />
+		url地址:<input id="url" name="url" type="text"/><br />
+		qq号码：<input id="qq" name="qq" type="text"/><br />
+		sype号：<input id="sype" name="sype" type="text"/><br />
+		<input id="submit" type="button"  value="提交"/><br />
+	</form>
+	
+	<script type="text/javascript">
+		$('#submit').click(function(){
+			/* var data = {
+				'username':$('#username').val(),
+				'email':$('#email').val(),
+				......} 太麻烦了*/
+				var data1 = $('#form').serialize();
+			$.ajax({
+				url:'03-test.php',
+				type:'post',
+				data:data1,
+				success:function(){
+					
+				}
+			})
+		})
+	</script>
+</body>
+</html>

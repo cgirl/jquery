@@ -35,5 +35,7 @@
 				_this.find(options.tabContent).eq(index).show().siblings().hide();
 			})
 		})
+		//为了链式操作，最好返回
+		return this;
 	}
 })(jQuery);
